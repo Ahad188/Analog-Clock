@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="analog-clock">
+          <div class="hour-contanier">
+               <ul class="hour-number">
+                    <li><div class="num"> 3</div></li>
+                    <li><div class="num"> 6</div></li>
+                    <li><div class="num"> 9</div></li>
+                    <li><div class="num"> 12</div></li>
+               </ul>
+               <ul class="hour-marks">
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+                    <li><div class="mark"></div></li>
+               </ul>
+               <ul class="midel-line">
+                    <li><div class="line"></div></li>
+                    <li><div class="line"></div></li>
+                    <li><div class="line"></div></li>
+                    <li><div class="line"></div></li>
+               </ul>
+          </div>
+          <div class="handel-ontent">
+               <div class="hand hr-hand" id="right"></div>
+               <div class="hand min-hand" id="left"></div>
+               <div class="hand sec-hand" id="midel"></div>
+          </div>
+          <div class="center-dot"></div>
+     </div>
+     
+
+
+     <script>
+          function seetClock(){
+               let now = new Date();
+               let hour = now.getHours();
+               let minit = now.getMinutes();
+               let sec = now.getSeconds();
+
+               hrValue = (hour * 30) + (minit * 6) / 12;
+               minValue = minit * 6;
+               secValue = sec * 6;
+
+               document.getElementById("right").style.transform ="rotate(" + hrValue + "deg)";
+               document.getElementById("left").style.transform ="rotate(" + minValue + "deg)";
+               document.getElementById("midel").style.transform ="rotate(" + secValue + "deg)";
+              
+          }
+          setInterval(seetClock, 1000);
+     </script>
+
+
+
+
+
+</body>
+</html>
